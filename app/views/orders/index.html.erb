@@ -1,0 +1,11 @@
+<h1> All Orders: </h1>
+
+<% @orders.each do |order| %>
+	<li><%= link_to "$#{order.price}", order_path(order) %>
+		by
+		<%= link_to "#{order.customer.last_name}, #{order.customer.first_name}", customer_path(order.customer_id) %></li>
+<% end %>
+
+<br>
+
+<h3><%= link_to "Create New Order", new_order_path %></h3>

@@ -1,0 +1,14 @@
+<h1> Order # <%= @order.id %> </h1>
+
+<h2>$<%= @order.price %></h2>
+
+<br>
+
+<strong>Customer:</strong>
+<%= link_to "#{@order.customer.last_name}, #{@order.customer.first_name}", customer_path(@order.customer_id) %> 
+
+<br>
+<br>
+<br>
+<br>
+<%= link_to "Back to Order Index", orders_path %>

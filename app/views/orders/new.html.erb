@@ -1,0 +1,17 @@
+<h1> Create New Order </h1>
+
+<%= form_for @order do |f| %>
+
+	<%= f.label :price, "Price:  $" %>
+	<%= f.text_field :price %>
+	
+	<br>
+	
+	<%= f.label :customer_id, "Customer ID: " %>
+	<%= f.text_field :customer_id %>
+	
+	<br>
+	
+	<%= f.submit "Create Order" %>
+	
+<% end %>

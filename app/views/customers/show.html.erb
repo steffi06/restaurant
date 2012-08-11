@@ -1,0 +1,22 @@
+<h1> Customer # <%= @customer.id %> </h1>
+
+
+<strong>Last Name:</strong> <%= @customer.last_name %> 
+<br>
+<strong>First Name:</strong> <%= @customer.first_name %>
+
+<br>
+
+<h4> Order History: </h4>
+<% if @customer.orders.length > 0 %>
+	<% @customer.orders.each do |order| %>
+		<li><%= link_to "$#{order.price}", order_path(order) %></li>
+	<% end %>
+<% else %>
+	<li> No Orders Yet </li>
+<% end %>
+
+<br>
+<br>
+
+<%= link_to "Back to Customer Index", customers_path %>
